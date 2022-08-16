@@ -150,8 +150,8 @@ yarn_2_install() {
   monitor "yarn-2-install" yarn install --mode update-lockfile 2>&1
 
   # ...
-  monitor "yarn-2-install" yarn postinstall 2>&1
   monitor "yarn-2-install" yarn install --immutable 2>&1
+  monitor "yarn-2-install" yarn heroku-postinstall 2>&1
 }
 
 yarn_prune_devdependencies() {
