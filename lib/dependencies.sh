@@ -147,10 +147,13 @@ yarn_2_install() {
   cd "$build_dir" || return
 
   # From b2c/before-install.sh - Clean yarn files (also make build faster)
+  echo "Running 'yarn install -mode update-lockfile'"
   monitor "yarn-2-install" yarn install --mode update-lockfile 2>&1
 
-  # ...
+  echo "Running 'yarn install --immutable'"
   monitor "yarn-2-install" yarn install --immutable 2>&1
+
+  echo "Running 'yarn install heroku-postinstall'"
   monitor "yarn-2-install" yarn heroku-postinstall 2>&1
 }
 
