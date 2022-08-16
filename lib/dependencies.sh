@@ -148,10 +148,10 @@ yarn_2_install() {
 
   # From b2c/before-install.sh - Clean yarn files (also make build faster)
   monitor "yarn-2-install" yarn install --mode update-lockfile 2>&1
-  monitor "yarn-2-install" yarn install --immutable 2>&1
 
   # ...
   monitor "yarn-2-install" yarn postinstall 2>&1
+  monitor "yarn-2-install" yarn install --immutable 2>&1
 }
 
 yarn_prune_devdependencies() {
