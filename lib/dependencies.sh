@@ -148,13 +148,13 @@ yarn_2_install() {
 
   # From b2c/before-install.sh - Clean yarn files (also make build faster)
   echo "Running 'yarn install -mode update-lockfile'"
-  monitor "yarn-2-install" yarn install --mode update-lockfile 2>&1
+  yarn install --mode update-lockfile
 
   echo "Running 'yarn install --immutable'"
-  monitor "yarn-2-install" yarn install --immutable 2>&1
+  yarn install --immutable
 
   echo "Running 'yarn install heroku-postinstall'"
-  monitor "yarn-2-install" yarn heroku-postinstall 2>&1
+  yarn heroku-postinstall
 }
 
 yarn_prune_devdependencies() {
